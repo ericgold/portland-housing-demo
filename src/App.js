@@ -10,7 +10,7 @@ class App extends Component {
           <h1>Portland Housing Demo</h1>
           <h2>Using Hack Oregon's Housing API</h2>
         </div>
-        <DataCard />
+        <DataCard url={"http://service.civicpdx.org/housing/rent/?page=1&housing_size=Studio&rent_amt_lt=900"}/>
       </div>
     );
   }

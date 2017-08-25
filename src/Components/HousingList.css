@@ -1,0 +1,10 @@
+.housing-list {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+.housing-list li {
+	list-style: none;
+	border: 1px solid black;
+}
