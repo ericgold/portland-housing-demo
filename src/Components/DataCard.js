@@ -28,7 +28,6 @@ export default class DataCard extends React.Component {
 		return (
 			<div className="wrapper">
 				<div className="data-card">
-					<h2>Sweet, Sweet, Data</h2>
 					<HousingList data={this.state.data}/>
 				</div>
 			</div>

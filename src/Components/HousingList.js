@@ -6,7 +6,6 @@ export default function HousingList(props) {
 	
 		return (
 		<div className="housing-list">
-			<h3>Housing List</h3>
 			<ul>
 				{props.data.map(unit => 
 					<HousingItem 
