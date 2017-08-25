@@ -28,10 +28,15 @@ export default class DataCard extends React.Component {
 		return (
 			<div className="wrapper">
 				<div className="controls">
-					<select name="neighborhood" id="neighborhood">Neighborhood</select>
-					<select name="size" id="size">Size</select>
-					<input type="number" name="min-rent"/><label htmlFor="min-rent">Min Rent</label>
-					<input type="number" name="max-rent"/><label htmlFor="max-rent">Max Rent</label>
+					<select name="neighborhood" id="neighborhood">
+					<option value="Roseway-Cully">Roseway-Cully</option>
+					<option value="Gateway">Gateway</option>
+					</select>
+					<select name="size" id="size">
+					<option value="studio">Studio</option>
+					</select>
+					<label htmlFor="min-rent">Min Rent</label><input type="number" name="min-rent"/>
+					<label htmlFor="max-rent">Max Rent</label><input type="number" name="max-rent"/>
 				</div>
 				<div className="data-card">
 					<HousingList data={this.state.data}/>
