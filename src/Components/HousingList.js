@@ -1,5 +1,6 @@
 import React from 'react';
 import './HousingList.css';
+import HousingItem from './HousingItem';
 
 export default function HousingList(props) {
 	
@@ -8,11 +9,11 @@ export default function HousingList(props) {
 			<h3>Housing List</h3>
 			<ul>
 				{props.data.map(unit => 
-					<li>
-						<p>Neighborhood: {unit.neighborhood}</p>
-						<p>Size: {unit.housing_size}</p>
-						<p>Rent: {unit.rent_amt}</p>
-					</li>
+					<HousingItem 
+						neighborhood={unit.neighborhood}
+						size={unit.housing_size}
+						rent={unit.rent_amt}
+					/>
 				)}		
 			</ul>
 		</div>
