@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import DataCard from './Components/DataCard';
 
 class App extends Component {
   render() {
@@ -9,7 +10,7 @@ class App extends Component {
           <h1>Portland Housing Demo</h1>
           <h2>Using Hack Oregon's Housing API</h2>
         </div>
-        <h2>App Goes Here</h2>
+        <DataCard />
       </div>
     );
   }
