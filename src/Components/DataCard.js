@@ -21,7 +21,7 @@ export default class DataCard extends React.Component {
 	}
 
 	componentDidMount() { 
-		const url = `${this.props.url}`;
+		const url = `${this.props.url}&housing_size=${this.state.inputHousingSize}&rent_amt_lt=${this.state.inputRentMax}`;
 		this.getData(url);
 	}
 
