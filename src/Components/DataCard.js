@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './DataCard.css';
 import HousingList from './HousingList';
 
@@ -7,7 +6,9 @@ export default class DataCard extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			data: []
+			data: [],
+			inputHousingSize: "Studio",
+			inputRentMax: 750
 		};
 		this.getData = this.getData.bind(this);
 	}
@@ -28,15 +29,13 @@ export default class DataCard extends React.Component {
 		return (
 			<div className="wrapper">
 				<div className="controls">
-					<select name="neighborhood" id="neighborhood">
-					<option value="Roseway-Cully">Roseway-Cully</option>
-					<option value="Gateway">Gateway</option>
-					</select>
 					<select name="size" id="size">
-					<option value="studio">Studio</option>
+					<option value="Studio">Studio</option>
+					<option value="1-BR">1 Bedroom</option>
+					<option value="2-BR">2 Bedroom</option>
+					<option value="3-BR">3 Bedroom</option>
 					</select>
-					<label htmlFor="min-rent">Min Rent</label><input type="number" name="min-rent"/>
-					<label htmlFor="max-rent">Max Rent</label><input type="number" name="max-rent"/>
+					<label htmlFor="max-rent">Max Rent</label><input type="number" name="max-rent" value="750"/>
 				</div>
 				<div className="data-card">
 					<HousingList data={this.state.data}/>
