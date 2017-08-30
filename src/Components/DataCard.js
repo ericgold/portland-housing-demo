@@ -7,9 +7,9 @@ export default class DataCard extends React.Component {
 		super(props);
 		this.state = {
 			data: [],
-			url: "http://service.civicpdx.org/housing/rent/?page=1",
-			inputHousingSize: "",
-			inputRentMax: ""
+			urlBasis: "http://service.civicpdx.org/housing/rent/?page=1",
+			inputHousingSize: "Studio",
+			inputRentMax: 750
 		};
 		this.getData = this.getData.bind(this);
 		this.updateSize = this.updateSize.bind(this);
@@ -18,7 +18,8 @@ export default class DataCard extends React.Component {
 
 
 	getData() {
-		const url = `${this.state.url}&housing_size=${this.state.inputHousingSize}&rent_amt_lt=${this.state.inputRentMax}`;
+		const { urlBasis, inputHousingSize, inputRentMax } = this.state;
+		const url = `${urlBasis}&housing_size=${inputHousingSize}&rent_amt_lt=${inputRentMax}`;
 		return fetch(url, {})
 								 .then(response => response.json())
 								 .then(jsonData => this.setState({ data: jsonData }))
