@@ -31,7 +31,7 @@ export default class DataCard extends React.Component {
 		this.setState({
 			inputHousingSize: size
 		});
-		this.getData();
+		//this.getData();
 	}
 
 	updateMaxRent(e) {
@@ -39,6 +39,10 @@ export default class DataCard extends React.Component {
 		this.setState({
 			inputRentMax: rent
 		})
+		//this.getData();
+	}
+
+	componentDidUpdate() {
 		this.getData();
 	}
 
