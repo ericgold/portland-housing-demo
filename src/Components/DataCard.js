@@ -15,6 +15,7 @@ export default class DataCard extends React.Component {
 		this.getData = this.getData.bind(this);
 		this.updateSize = this.updateSize.bind(this);
 		this.updateMaxRent = this.updateMaxRent.bind(this);
+		this.getResults = this.getResults.bind(this);
 	}
 
 
@@ -32,7 +33,6 @@ export default class DataCard extends React.Component {
 		this.setState({
 			inputHousingSize: size
 		});
-		//this.getData();
 	}
 
 	updateMaxRent(e) {
@@ -40,15 +40,13 @@ export default class DataCard extends React.Component {
 		this.setState({
 			inputRentMax: rent
 		})
-		//this.getData();
 	}
 
-	componentDidUpdate(prevProps, prevState) {
-		if (prevState.inputRentMax === this.state.inputRentMax) {
-			return;
-		}
-	 	this.getData();
-  }
+	getResults(e) {
+		//e.preventDefault();
+		this.getData();
+	}
+
 
 	componentDidMount() { 
 		this.getData();
@@ -66,7 +64,8 @@ export default class DataCard extends React.Component {
 						<option value="2-BR">2 Bedroom</option>
 						<option value="3-BR">3 Bedroom</option>
 					</select>
-					<label htmlFor="max-rent">Max Rent</label><input type="number" name="max-rent" value={this.state.inputRentMax} onChange={this.updateMaxRent}/>
+					<label htmlFor="max-rent">Max Rent</label><input type="number" name="max-rent" onChange={this.updateMaxRent} value={this.state.inputRentMax} />
+					<button type="submit" onClick={this.getResults}>Get Results</button>
 				</div>
 				<div className="data-card">
 					<HousingList data={this.state.data} />
@@ -74,7 +73,6 @@ export default class DataCard extends React.Component {
 				<div className="data-card">
 					<HousingChart data={this.state.data} />
 				</div>
-
 			</div>
 			
 		)
