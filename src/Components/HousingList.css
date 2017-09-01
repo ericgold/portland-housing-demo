@@ -9,6 +9,7 @@
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: flex-start;
+	padding: 0;
 }
 
 .housing-list li {
