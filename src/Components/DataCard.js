@@ -1,6 +1,7 @@
 import React from 'react';
 import './DataCard.css';
 import HousingList from './HousingList';
+import HousingChart from './HousingChart';
 
 export default class DataCard extends React.Component {
 	constructor(props) {
@@ -42,9 +43,12 @@ export default class DataCard extends React.Component {
 		//this.getData();
 	}
 
-	componentDidUpdate() {
-		this.getData();
-	}
+	componentDidUpdate(prevProps, prevState) {
+		if (prevState.inputRentMax === this.state.inputRentMax) {
+			return;
+		}
+	 	this.getData();
+  }
 
 	componentDidMount() { 
 		this.getData();
@@ -65,8 +69,12 @@ export default class DataCard extends React.Component {
 					<label htmlFor="max-rent">Max Rent</label><input type="number" name="max-rent" value={this.state.inputRentMax} onChange={this.updateMaxRent}/>
 				</div>
 				<div className="data-card">
-					<HousingList data={this.state.data}/>
+					<HousingList data={this.state.data} />
 				</div>
+				<div className="data-card">
+					<HousingChart data={this.state.data} />
+				</div>
+
 			</div>
 			
 		)
