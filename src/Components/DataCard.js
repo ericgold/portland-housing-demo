@@ -68,10 +68,10 @@ export default class DataCard extends React.Component {
 					<button type="submit" onClick={this.getResults}>Get Results</button>
 				</div>
 				<div className="data-card">
-					<HousingList data={this.state.data} />
+					<HousingChart data={this.state.data} />
 				</div>
 				<div className="data-card">
-					<HousingChart data={this.state.data} />
+					<HousingList data={this.state.data} />
 				</div>
 			</div>
 			
